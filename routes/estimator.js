@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 router.get('/logs', (req, res) => {
   try {
     const data = fs.readFileSync(filepath, 'utf8');
-    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Content-Type', 'text/plain');
     return res.send(data);
   } catch (error) {
     return res.send({ error });
@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 
 router.post('/xml', (req, res) => {
   const estimate = calculateEstimate(req.body);
-  res.type('application/xml');
+  res.set('Content-Type', 'application/xml');
   return res.status(200).send(jsontoxml(estimate));
 });
 
