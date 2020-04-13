@@ -31,9 +31,7 @@ router.post('/', (req, res) => {
 
 router.post('/xml', (req, res) => {
   const estimate = calculateEstimate(req.body);
-
-  const xml = jsontoxml(estimate);
-  return res.status(200).send(xml);
+  return res.status(200).send(jsontoxml(estimate));
 });
 
 router.post('/json', (req, res) => {
