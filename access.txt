@@ -3,3 +3,12 @@ GET	/api/v1/on-covid-19/logs	200	01ms
 POST	/api/v1/on-covid-19/	200	08ms
 POST	/api/v1/on-covid-19/xml	200	01ms
 GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	02ms
+GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	01ms
+GET	/api/v1/on-covid-19/logs	200	01ms

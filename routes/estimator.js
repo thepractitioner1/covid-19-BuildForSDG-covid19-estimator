@@ -17,7 +17,7 @@ router.get('/logs', (req, res) => {
   try {
     const data = fs.readFileSync(filepath, 'utf8');
     res.setHeader('Content-Type', 'text/html');
-    return res.send(data.toString().trim());
+    return res.send(data);
   } catch (error) {
     return res.send({ error });
   }
@@ -29,17 +29,16 @@ router.post('/', (req, res) => {
   return res.status(200).send(estimate);
 });
 
-router.post('/:format', (req, res) => {
+router.post('/xml', (req, res) => {
   const estimate = calculateEstimate(req.body);
-  if (req.params.format === 'json') {
-    return res.status(200).send(estimate);
-  }
-  if (req.params.format === 'xml') {
-    const xml = jsontoxml(estimate);
-    return res.status(200).send(xml);
-  }
 
-  return res.status(404).json({ response: 'Please use /json or /xml' });
+  const xml = jsontoxml(estimate);
+  return res.status(200).send(xml);
+});
+
+router.post('/json', (req, res) => {
+  const estimate = calculateEstimate(req.body);
+  return res.status(200).send(estimate);
 });
 
 
