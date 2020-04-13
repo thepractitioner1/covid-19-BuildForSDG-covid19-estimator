@@ -31,6 +31,7 @@ router.post('/', (req, res) => {
 
 router.post('/xml', (req, res) => {
   const estimate = calculateEstimate(req.body);
+  res.type('application/xml');
   return res.status(200).send(jsontoxml(estimate));
 });
 
